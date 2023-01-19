@@ -16,7 +16,8 @@ export default function App() {
     latitudeDelta: 40,
     logintudeDelta: 40,
   };
-
+  /* 
+  Solução 1: 
   const novaLocalizacao = (event) => {
     let coordenadas = {
       latitude: event.nativeEvent.coordinate.latitude,
@@ -29,7 +30,7 @@ export default function App() {
     });
     console.log(localizacao);
   };
-
+ */
   /*  const localizacao = {
     latitude: -33.867886,
     longitude: -63.987,
@@ -49,7 +50,14 @@ export default function App() {
           userInterfaceStyle="dark" // Define o mapa para o estilo selecionado. Funciona apenas para IOS
           // maxZoomLevel={15} // 	Valor máximo de zoom para o mapa, deve estar entre 0 e 20
           // minZoomLevel={2} // Valor mínimo de zoom para o mapa, deve estar entre 0 e 20
-          onPress={novaLocalizacao}
+          // onPress={novaLocalizacao}
+          onPress={(e) =>
+            setLocalizacao({
+              ...localizacao,
+              latitude: e.nativeEvent.coordinate.latitude,
+              longitude: e.nativeEvent.coordinate.longitude,
+            })
+          }
         >
           <Marker
             coordinate={localizacao}
