@@ -31,13 +31,6 @@ export default function App() {
     console.log(localizacao);
   };
  */
-  /*  const localizacao = {
-    latitude: -33.867886,
-    longitude: -63.987,
-    latitudeDelta: 10,
-    longitudeDelta: 10,
-  };
- */
   return (
     <>
       <StatusBar />
@@ -50,14 +43,15 @@ export default function App() {
           userInterfaceStyle="dark" // Define o mapa para o estilo selecionado. Funciona apenas para IOS
           // maxZoomLevel={15} // 	Valor máximo de zoom para o mapa, deve estar entre 0 e 20
           // minZoomLevel={2} // Valor mínimo de zoom para o mapa, deve estar entre 0 e 20
-          // onPress={novaLocalizacao}
-          onPress={(e) =>
+          // onPress={novaLocalizacao} Solução 1
+          onPress={(e) => {
             setLocalizacao({
               ...localizacao,
               latitude: e.nativeEvent.coordinate.latitude,
               longitude: e.nativeEvent.coordinate.longitude,
-            })
-          }
+            });
+            console.log(localizacao);
+          }}
         >
           <Marker
             coordinate={localizacao}
