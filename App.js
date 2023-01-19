@@ -17,6 +17,19 @@ export default function App() {
     logintudeDelta: 40,
   };
 
+  const novaLocalizacao = (event) => {
+    let coordenadas = {
+      latitude: event.nativeEvent.coordinate.latitude,
+      longitude: event.nativeEvent.coordinate.longitude,
+    };
+    setLocalizacao({
+      ...coordenadas,
+      latitudeDelta: 10,
+      longitudeDelta: 10,
+    });
+    console.log(localizacao);
+  };
+
   /*  const localizacao = {
     latitude: -33.867886,
     longitude: -63.987,
@@ -36,9 +49,7 @@ export default function App() {
           userInterfaceStyle="dark" // Define o mapa para o estilo selecionado. Funciona apenas para IOS
           // maxZoomLevel={15} // 	Valor máximo de zoom para o mapa, deve estar entre 0 e 20
           // minZoomLevel={2} // Valor mínimo de zoom para o mapa, deve estar entre 0 e 20
-          onPress={() => {
-            setLocalizacao(localizacao);
-          }}
+          onPress={novaLocalizacao}
         >
           <Marker
             coordinate={localizacao}
