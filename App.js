@@ -80,6 +80,7 @@ export default function App() {
             // maxZoomLevel={15} // 	Valor máximo de zoom para o mapa, deve estar entre 0 e 20
             // minZoomLevel={2} // Valor mínimo de zoom para o mapa, deve estar entre 0 e 20
             onPress={(e) => {
+              "";
               setLocalizacao({
                 latitudeDelta: 0.0922,
                 longitudeDelta: 0.0421,
