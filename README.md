@@ -32,3 +32,14 @@ Programe recursos que permitam colocar o `Marker` no local em que o usuário toc
 
 - Você precisará trabalhar com `state` para registrar a localização, além de evento `onPress` (no MapView) e função.
 - Lembre-se que para acessar dados da localização, você pode utilizar as informações do `event.nativeEvent`
+
+
+Nesta correção fizemos com que o Marker apareça apenas quando o usuário tocar em um local do Mapa, ou seja, condicionamos a exibição do marcador à existência de uma localização.
+
+## 05-mapview-com-location
+
+Documentação: https://docs.expo.dev/versions/latest/sdk/location/
+
+### Instalação:
+
+`npx expo install expo-location`
